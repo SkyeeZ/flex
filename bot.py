@@ -1,6 +1,6 @@
 import telebot
 
-bot = telebot.TeleBot('1377694603:AAEQaDEBAB2XLIcRF7X5H5EK93gV1PZMKKA')
+bot = telebot.TeleBot('ban')
 
 @bot.message_handler(commands=['start', 'help'])
 def send_welcome(message):
