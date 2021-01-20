@@ -1,0 +1,16 @@
+import telebot
+
+bot = telebot.TeleBot('1377694603:AAEQaDEBAB2XLIcRF7X5H5EK93gV1PZMKKA')
+
+@bot.message_handler(commands=['start', 'help'])
+def send_welcome(message):
+         bot.reply_to(message, f"Я бот. Приятно познакомиться", {message.from_user.first_name})
+@bot.message_handler(content_types=['text'])
+def send_text(message):
+    if message.text == 'Привет':
+        bot.send_message(message.chat.id, 'Привет, мой создатель')
+    elif message.text == 'Пока':
+        bot.send_message(message.chat.id, 'Прощай, создатель')
+
+
+bot.polling()
